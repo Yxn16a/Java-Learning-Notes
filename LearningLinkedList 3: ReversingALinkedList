@@ -1,0 +1,24 @@
+// this function reverses a linked List 
+public ListNode reverseLinkedList(ListNode head){
+       // create a current pointer that points to head 
+        ListNode current = head;
+        // create a previous pointer that point to null 
+        // this previous pointer moves behind current node 
+        ListNode previous = null;
+        // create next pointer that point to null at first 
+        ListNode  next = null;
+        // loop and while you loop change direction of pointers to point backward
+        while(current!= null){
+        // point next to the current point next
+            next = current.next;
+            // point previous to current point next and this will help us to form a back ward pointer 
+            previous = current.next;
+            // make previous point to the back which means it is not creating a backward pointer 
+            previous= current;
+            // then make current point to next since the back ward pointer was formed
+            current = next;
+
+        }
+        // at the end all the direction were reversed and it is time to return the linked list where head is now previous
+        return previous;
+    }
