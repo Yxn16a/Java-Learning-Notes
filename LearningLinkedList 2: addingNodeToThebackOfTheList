@@ -1,0 +1,17 @@
+   //in this program you have to loop untill you hit the end of a linkedList and then add the node there 
+   public void addToBack(int data){
+      ListNode newNode = new ListNode(data); // create a node 
+      // check if head is null and if it is null then add the node at head 
+      if(head == null){ 
+          head = newNode;
+          return;
+      }
+      // if head is not null then loop until you hit the end of the list then bread out of the loop
+      ListNode temp = head;
+      while(temp.next != null){
+          temp =temp.next;
+      }
+      // add a new node to the list
+      temp.next = newNode;
+      size++;
+    }
