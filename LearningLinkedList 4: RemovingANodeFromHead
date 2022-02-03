@@ -1,0 +1,13 @@
+ // this function removes a node from head 
+ public int removeFromHead(){
+ //check if head is null and if it is null then return you do not have any node 
+        if( head == null){
+            return 0;
+        }
+        // make temp point to head 
+        ListNode  temp = head;
+        // make head point to temp next 
+        temp.next = head;
+        // return removed node 
+        return temp.data;
+    }
