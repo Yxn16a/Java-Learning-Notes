@@ -1,0 +1,24 @@
+//this function checks if the element is in the linked List
+public boolean isElementInTheLinkedList(int key){
+// check if head is equal to the element that we are looking for
+        if( head. data == key){
+            return true;
+        }
+        // check if head is null or not 
+        if(head== null){
+            return false;
+        }
+        // if head is not null and the element that we are looking for is not the head then traverse to find the element 
+        // create a pointer temp that point to the head 
+        ListNode temp = head;
+        // traverse using the pointer temp until you find the key or you hit null 
+        while(temp != null){
+        // while you travel when you hit the key then return true
+            if(temp.data == key){
+                return true;
+            }
+            temp = temp.next;
+        }
+        // if you finish traversing and no key is found then return false 
+        return false;
+    }
