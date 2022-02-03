@@ -1,0 +1,28 @@
+ // this function removes a node from a specific location 
+ public int removeFromSpecificLocation(int n){
+ // check if head is null then return if head points to null 
+        if(head==null){
+            return 0;
+        }
+        //create pointer temp to point to head 
+        ListNode temp = head;
+        //check if position passed is one which means to remove the first node 
+        if(n==1){
+            head = temp.next;
+            temp.next = null;
+            return temp.data;
+        }
+        // if the position of to be removed node is not  the head then you need to traverse the singly linked List to get to the position 
+        int i=1;
+        while(i<n-1){
+        // when you read the position then get out of the loop 
+            temp = temp.next;
+            i++;
+        }
+        // create tempRemove pointer that point to temp.next which is the node that is going to be removed 
+        ListNode TempRemove = temp.next;
+        // by pass the node to be removed 
+        temp.next = TempRemove.next;
+        // then return the data of the node that is removed 
+        return TempRemove.data;
+    }
