@@ -1,0 +1,20 @@
+ // this function finds the middleNode
+ public int findMiddleNode(){
+ // check if head is null then return zero becaue no middle node 
+        if(head == null){
+            return 0;
+        }
+        // if head is not null then you have to create to pointer one is a faster pointer and the other
+        // is a slow pointer and both start by point to the head of the list 
+        ListNode  slowerNode = head;
+        ListNode fastNode = head;
+        // now traverse the list
+        // the first pointer traverse at twice speed of the slow poitner and when the fast pointer reaches the end
+        // when slow pointer is is the middle node
+        while (fastNode!=null && fastNode.next!=null){
+            slowerNode = slowerNode.next;
+            fastNode= fastNode.next.next;
+        }
+        // return the slow pointer location and that is the middle node
+        return slowerNode.data;
+    }
