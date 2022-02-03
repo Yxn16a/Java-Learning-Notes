@@ -1,0 +1,20 @@
+ // this function do remove the last element of the list 
+ public int  removeTheLastElementInLinkedList (){
+   // check if head is null or head.next is null 
+        if(head == null || head.next == null){
+            return head.data;
+        }
+        // if head is not null then it time to traverse to read the last node and remove it
+        // create a previous node that point to null and then traverse the list 
+        ListNode  previous = null;
+        ListNode temp = head;
+        // traverse until you read the last node while previous is pointing to the previous node from the last node 
+        while(temp.next != null){
+            previous= temp;
+            temp = temp.next;
+        }
+        // make previous next equal to null 
+        previous.next = null;
+        // return the node where temp is pointing becuase it is the last node
+        return temp.data;
+    }
