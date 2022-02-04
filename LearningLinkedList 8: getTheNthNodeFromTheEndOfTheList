@@ -1,0 +1,26 @@
+ 
+ 
+ public ListNode getTheNthNodeFromTheEnd( int n){
+ // check if head is null if it null then there is no element 
+        if(head == null){
+            return null;
+        }
+        //create a pointer reference to point to head 
+        ListNode reference = head;
+        /create a pointer mainPointer to point to  head too 
+        ListNode mainPointer = head;
+        // we are going to count where to remove the pointer 
+        int count =0;
+        // loop first by refrence 
+        while(count < n ){
+            reference = reference.next;
+            count++;
+        }
+        // start where refrence point stoped and move main from head and do that until refrence is equal to null 
+        while (reference != null){
+            mainPointer = mainPointer.next;
+            reference= reference.next;
+        }
+        // return the node wehre  mainPoint is pointing at and that is the nth node from the end 
+        return mainPointer;
+    }
