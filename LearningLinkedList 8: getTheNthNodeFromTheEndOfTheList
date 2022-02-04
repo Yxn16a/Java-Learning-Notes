@@ -21,6 +21,6 @@
             mainPointer = mainPointer.next;
             reference= reference.next;
         }
-        // return the node wehre  mainPoint is pointing at and that is the nth node from the end 
+        // return the node where  mainPoint is pointing at and that is the nth node from the end 
         return mainPointer;
     }
