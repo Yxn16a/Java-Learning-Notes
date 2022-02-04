@@ -1,0 +1,14 @@
+// it is easy to reverse a linked List
+public void reverseDouleLinkedLinkedList(){
+// check if tail has a node 
+        if(tail == null ){
+            return;
+        }
+        doubleListNode temp = tail;
+        // loop from tail up to where it is null by printing each data that you find 
+        // while you traverse
+        while(temp !=null) {
+            System.out.println(temp.data);
+            temp=temp.previous;
+        }
+    }
