@@ -1,0 +1,22 @@
+ 
+ // this removes each node that has certain key 
+ public void RemoveEveryNodeWithKey(int Key) {
+        ListNode current = head;
+        // this goes behind current node 
+        ListNode temp = null;
+        if (head == null) {
+            return;
+        }
+        if (current != null && current.data == Key) {
+            head = head.next;
+            current = null;
+            return;
+        }
+        while (current != null) {
+            if (current.data == Key) {
+                temp.next = current.next;
+            }
+            temp = current;
+            current = current.next;
+        }
+    }
