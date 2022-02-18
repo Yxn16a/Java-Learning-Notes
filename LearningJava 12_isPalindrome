@@ -1,0 +1,16 @@
+// the ida here is to chech if a world is a palindrome 
+public int isPalindrome(String a){
+        String b = a.toLowerCase();
+        // we convert the string into character array 
+        char[] c = b.toCharArray();
+        int j= c.length-1;
+        // then we loop to check if the word is a palindrome
+        // if any of the character does not match what we are looking for then return zero 
+        for(int i=0; i < j; i++){
+            if(c[i] != c[j]){
+                return 0;
+            }
+            j--;
+        }
+        return 1;
+    }
