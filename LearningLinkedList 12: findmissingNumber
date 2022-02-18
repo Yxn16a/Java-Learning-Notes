@@ -1,0 +1,14 @@
+//the idea is to find sum of natural numbers in range from zero to 
+// and then substract the sum of the numbers that we have in the array
+// the result is the missing number 
+public int FindTheMissingNumber(int[] a){
+// add the numbers in the array 
+        int n =a.length+1;
+        // this is how we find the sum of numbers from 0 to n 
+        int TotalSum =  n*(n+1)/2;
+        int sum = 0;
+        for (int j : a) {
+            sum += j;
+        }
+        return TotalSum - sum;
+    }
