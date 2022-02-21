@@ -1,0 +1,22 @@
+// because the matrix is sorted then what we will do is to loop the matix but
+// we will not visit each number in the matrix
+// instead we will use j and i and when we look at the number and the number is greater that we are looking for 
+// then will discard a whole section of numbers that are in the greater range by decrementing j
+ public  String searchKeyInSortedMatrix(int[][]Matrix, int n, int number){
+ // i start at the beginning of matrix at the top left conner 
+        int i=0;
+        // j starts at the end of matrix(top right conner) 
+        int j = n-1;
+        while(j>=0 && i < n){
+            if(Matrix[i][j] == number){
+                return "found";
+            }
+            // if i and j number is greater than the number that we are looking for then we need to decrement j 
+            if(Matrix[i][j] > number){
+                j--;
+            }else{
+                i++; // else we need to increament 
+            }
+        }
+        return "Not found";
+    }
