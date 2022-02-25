@@ -1,0 +1,29 @@
+public char SecondMostFrequentCharacterInAString(String a){
+        char[] b = a.toCharArray();
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+        char saveSecond = 0;
+        char firstChar = 0;
+        Map<Character,Integer> map = new HashMap<>();
+        for (char c : b) {
+            if (map.containsKey(c)) {
+                int frequency = map.get(c) + 1;
+                map.put(c, frequency);
+            } else {
+                map.put(c, 1);
+            }
+        }
+        for (char c : map.keySet()) {
+            if (map.get(c) > max) {
+                secondMax = max;
+                saveSecond = firstChar;
+                firstChar = c;
+                max = map.get(c);
+
+            }else if (map.get(c) > secondMax && map.get(c) != max) {
+                secondMax = map.get(c);
+                saveSecond =c;
+            }
+        }
+        return saveSecond;
+    }
